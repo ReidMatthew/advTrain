@@ -1,12 +1,13 @@
 class Rider {
-    constructor() {
+    constructor({}) {
+        Object.assign(this, params);
     }
 
     show() {
         push();
 
-
-
+        this.
+        
         pop();
     }
 }

@@ -1,24 +1,27 @@
-var track, train, degree = 0;
+var tracks = [], trains = [], degree = 0, stops = [];
 
 function setup() {
 	varInit();
 
-	createCanvas(windowWidth, windowHeight);
+	stops.push(createVector(Math.random() * windowWidth, Math.random() * windowHeight));
+	stops.push(createVector(Math.random() * windowWidth, Math.random() * windowHeight));
+	stops.push(createVector(Math.random() * windowWidth, Math.random() * windowHeight));
 
-	// put setup code here
+	createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
 	background("white")
-	degree = ++degree % 3600 
-	circle(track.x, track.y, track.z)
-	circle( track.z / 2 * Math.cos(degree / 50) + train.x,  track.z / 2 * Math.sin(degree / 50) + train.y, train.z)
+	degree = ++degree % 3600;
 
+
+	Track.showAll();
+	Train.showAll();
 }
 
 
 
 function varInit() {
-	track = createVector(400,400,500);
-	train = createVector(track.x, track.y, 20);
+	tracks.push(new Track({ x: 250, y: 250, radius: 400, color: 0 }));
+	trains.push(new Train({ track: tracks[0] }))
 }
