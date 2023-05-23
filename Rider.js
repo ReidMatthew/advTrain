@@ -6,7 +6,7 @@ class Rider {
     show() {
         push();
 
-        this.
+        // this.
         
         pop();
     }
